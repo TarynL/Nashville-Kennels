@@ -3,7 +3,8 @@ import React, { useState } from "react"
 
 export const PropsAndState = ({ yourName }) => {
   let [countClicks, setCountClicks] = useState(0)
-
+// useState holds a variable to hold a value and a function to update that value
+// its a function that passes an intial value through-where to start
   const handleClick = () => {
     //good practice:
     //make a copy of state, modify it, and then setState to the copy
