@@ -1,9 +1,16 @@
 import React from "react";
 import "./Employee.css";
 
-export const EmployeeCard = () => (
-    <section className = "employee">
-        <h3 className = "employee_name">Emma Beaton</h3>
-        <div className = "employee_location">Nashville Kennels North</div>
-    </section>
-);
+export const EmployeeCard = ({ employee }) => {
+    return (
+      <div className="card">
+        <div className="card-content">
+          
+          <h3>Name: <span className="card-employeeName">
+            {employee.name}
+          </span></h3>
+          <p>Location: {employee.location}</p>
+        </div>
+      </div>
+    );
+  }

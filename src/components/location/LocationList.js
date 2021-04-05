@@ -7,8 +7,7 @@ export const LocationList = () => {
 
     const getLocations = () => {
         return getAllLocations()
-        .then(locationsFromAPI => {
-            console.log(locationsFromAPI)
+        .then(locationsFromAPI => {    
             setLocations(locationsFromAPI)
         });
     };
