@@ -1,9 +1,16 @@
 import React from "react";
 import "./Customer.css";
 
-export const CustomerCard = () => (
-    <section className ="customer">
-        <h3 className = "customer_name">Hannah Hall</h3>
-        <address className = "customer_address">Address: 100 Infinity Way</address>
-    </section>
-);
+export const CustomerCard = ({ customer }) => {
+    return (
+      <div className="card">
+        <div className="card-content">
+          
+          <h3>Name: <span className="card-customerName">
+            {customer.name}
+          </span></h3>
+          <p>Address: {customer.address}</p>
+        </div>
+      </div>
+    );
+  }

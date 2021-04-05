@@ -7,10 +7,16 @@
         { "id": 3, "name": "Esme", "breed": "Pitbull" }
     ],
     "customers": [
+       
         {
             "id": 1,
-            "name": "Hannah Hall",
-            "address": "7002 Chestnut Ct"
+            "name": "Nena",
+            "address": "99 Luftballoons Blvd"
+        },
+        {
+            "id": 2,
+            "name": "Dolly Parton",
+            "address": "925 Jolene Avenue"
         }
     ],
     "employees": [
@@ -32,19 +38,6 @@
             "id": 3,
             "name": "Nashville East",
             "address": "867 Five Three Oh Nine"
-        }
-    ],
-    
-    "owners": [
-        {
-            "id": 1,
-            "name": "Nena",
-            "address": "99 Luftballoons Blvd"
-        },
-        {
-            "id": 2,
-            "name": "Dolly Parton",
-            "address": "925 Jolene Avenue"
         }
     ]
     
