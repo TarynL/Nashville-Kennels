@@ -4,7 +4,7 @@ import { Home } from "./Home";
 import { AnimalList } from "./animal/AnimalList";
 import { LocationList } from "./location/LocationList";
 import { EmployeeList } from "./employee/EmployeeList";
-import { CustomerCard } from "./customer/Customer";
+import { CustomerList } from "./customer/CustomerList";
 
 
 export const ApplicationViews = () => {
@@ -28,8 +28,8 @@ export const ApplicationViews = () => {
                 <EmployeeList />
             </Route>
 
-            <Route path="/customers">
-                <CustomerCard />
+            <Route exact path="/customers">
+                <CustomerList />
             </Route>
         </>
     )

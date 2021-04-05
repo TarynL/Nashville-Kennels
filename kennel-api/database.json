@@ -1,51 +1,60 @@
-
-
 {
-    "animals": [
-        { "id": 1, "name": "Doodles", "breed": "Poodle"},
-        { "id": 2, "name": "Decker", "breed": "German Shepherd" },
-        { "id": 3, "name": "Esme", "breed": "Pitbull" }
-    ],
-    "customers": [
-        {
-            "id": 1,
-            "name": "Hannah Hall",
-            "address": "7002 Chestnut Ct"
-        }
-    ],
-    "employees": [
-        { "id": 1, "name": "Gustopher Lewis", "location": "Nashville North"},
-        { "id": 2, "name": "Earl Henry", "location": "Nashville South"}
-    ],
-    "locations": [
-        {
-            "id": 1,
-            "name": "Nashville North",
-            "address": "8422 Johnson Pike"
-        },
-        {
-            "id": 2,
-            "name": "Nashville South",
-            "address": "209 Emory Drive"
-        },
-        {
-            "id": 3,
-            "name": "Nashville East",
-            "address": "867 Five Three Oh Nine"
-        }
-    ],
-    
-    "owners": [
-        {
-            "id": 1,
-            "name": "Nena",
-            "address": "99 Luftballoons Blvd"
-        },
-        {
-            "id": 2,
-            "name": "Dolly Parton",
-            "address": "925 Jolene Avenue"
-        }
-    ]
-    
+  "animals": [
+    {
+      "id": 1,
+      "name": "Doodles",
+      "breed": "Poodle"
+    },
+    {
+      "id": 2,
+      "name": "Oscar",
+      "breed": "Boxer"
+    },
+    {
+      "id": 3,
+      "name": "Esme",
+      "breed": "Pitbull"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Nena",
+      "address": "99 Luftballoons Blvd"
+    },
+    {
+      "id": 2,
+      "name": "Dolly Parton",
+      "address": "925 Jolene Avenue"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Gustopher Lewis",
+      "location": "Nashville North"
+    },
+    {
+      "id": 2,
+      "name": "Earl Henry",
+      "location": "Nashville South"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Nashville North",
+      "address": "8422 Johnson Pike"
+    },
+    {
+      "id": 2,
+      "name": "Nashville South",
+      "address": "209 Emory Drive"
+    },
+    {
+      "id": 3,
+      "name": "Nashville East",
+      "address": "867 Five Three Oh Nine"
+    }
+  ]
 }
