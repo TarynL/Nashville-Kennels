@@ -3,29 +3,37 @@
     {
       "id": 1,
       "name": "Doodles",
-      "breed": "Poodle"
+      "breed": "Poodle",
+      "locationId": 1,
+      "customerId":1
     },
     {
       "id": 2,
       "name": "Oscar",
-      "breed": "Boxer"
+      "breed": "Boxer",
+      "locationId": 2,
+      "customerId":1
     },
     {
       "id": 3,
       "name": "Esme",
-      "breed": "Pitbull"
+      "breed": "Pitbull",
+      "locationId": 3,
+      "customerId":2
     }
   ],
   "customers": [
     {
       "id": 1,
       "name": "Nena",
-      "address": "99 Luftballoons Blvd"
+      "address": "99 Luftballoons Blvd",
+      "animalId":2
     },
     {
       "id": 2,
       "name": "Dolly Parton",
-      "address": "925 Jolene Avenue"
+      "address": "925 Jolene Avenue",
+      "animalId": 1
     }
   ],
   "employees": [
