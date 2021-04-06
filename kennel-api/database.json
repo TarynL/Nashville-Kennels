@@ -40,29 +40,37 @@
     {
       "id": 1,
       "name": "Gustopher Lewis",
-      "location": "Nashville North"
+      "location": "Nashville North",
+      "animalId": 1
     },
     {
       "id": 2,
       "name": "Earl Henry",
-      "location": "Nashville South"
+      "location": "Nashville South",
+      "animalId": 2
     }
   ],
   "locations": [
     {
       "id": 1,
       "name": "Nashville North",
-      "address": "8422 Johnson Pike"
+      "address": "8422 Johnson Pike",
+      "animalId": 3,
+      "employeeId": 1
     },
     {
       "id": 2,
       "name": "Nashville South",
-      "address": "209 Emory Drive"
+      "address": "209 Emory Drive",
+      "animalId": 2,
+      "employeeId": 1
     },
     {
       "id": 3,
       "name": "Nashville East",
-      "address": "867 Five Three Oh Nine"
+      "address": "867 Five Three Oh Nine",
+      "animalId": 1,
+      "employeeId": 2
     }
   ]
 }

@@ -5,8 +5,11 @@ import { AnimalList } from "./animal/AnimalList";
 import { LocationList } from "./location/LocationList";
 import { EmployeeList } from "./employee/EmployeeList";
 import { CustomerList } from "./customer/CustomerList";
-import {AnimalDetail} from "./animal/AnimalDetail";
+import { AnimalDetail } from "./animal/AnimalDetail";
 import { CustomerDetail } from "./customer/CustomerDetail";
+import { EmployeeDetail } from "./employee/EmployeeDetail";
+import { LocationDetail } from "./location/LocationDetail";
+
 
 export const ApplicationViews = () => {
     return (
@@ -29,8 +32,16 @@ export const ApplicationViews = () => {
                 <LocationList />
             </Route>
 
+            <Route path="/locations/:locationId(\d+)">
+                <LocationDetail />
+            </Route>
+
             <Route exact path="/employees">
                 <EmployeeList />
+            </Route>
+
+            <Route path="/employees/:employeeId(\d+)">
+                <EmployeeDetail />
             </Route>
 
             <Route exact path="/customers">

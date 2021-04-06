@@ -10,3 +10,8 @@ export const deleteLocation = (id) => {
       method: "DELETE"
     }).then(result => result.json())
   }
+
+  export const getLocationById = (id) => {
+    return fetch(`${remoteURL}/locations/${id}?_expand=animal&_expand=employee`)
+      .then(res => res.json())
+  }
