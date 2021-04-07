@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { addAnimal } from '../../modules/AnimalManager';
 import { getAllLocations } from '../../modules/LocationManager';
-import {getAllCustomers} from '../../modules/CustomerManager'
+import { getAllCustomers } from '../../modules/CustomerManager';
 import './AnimalForm.css';
 
 export const AnimalForm = () => {

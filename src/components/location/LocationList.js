@@ -1,32 +1,39 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { LocationCard } from './Location';
-import { getAllLocations, deleteLocation} from '../../modules/LocationManager';
+import { getAllLocations, deleteLocation } from '../../modules/LocationManager';
+import { useHistory } from 'react-router-dom';
 
 export const LocationList = () => {
-    const [locations, setLocations] = useState([]);
+  const [locations, setLocations] = useState([]);
+  const history = useHistory();
 
-    const getLocations = () => {
-        return getAllLocations()
-        .then(locationsFromAPI => {    
-            setLocations(locationsFromAPI)
-        });
-    };
+  const getLocations = () => {
+    return getAllLocations()
+      .then(locationsFromAPI => {
+        setLocations(locationsFromAPI)
+      });
+  };
 
-    useEffect(() => {
-        getLocations();
-    }, []);
+  useEffect(() => {
+    getLocations();
+  }, []);
 
-    const handleDeleteLocation = (id) => {
-      deleteLocation(id)
+  const handleDeleteLocation = (id) => {
+    deleteLocation(id)
       .then(() => getAllLocations()
-      .then(setLocations));
-    };
+        .then(setLocations));
+  };
 
-    return(
-        <div className="container-cards">
-          {locations.map(location =>
-            <LocationCard key={location.id} location={location} handleDeleteLocation={handleDeleteLocation} />
-          )}
-        </div>
-      );
-    };
+  return (
+    <>
+      <section className="section-content">
+        <button type="button" className="btn" onClick={() => history.push("/locations/create")}>Add Location</button>
+      </section>
+      <div className="container-cards">
+        {locations.map(location =>
+          <LocationCard key={location.id} location={location} handleDeleteLocation={handleDeleteLocation} />
+        )}
+      </div>
+    </>
+  );
+};
