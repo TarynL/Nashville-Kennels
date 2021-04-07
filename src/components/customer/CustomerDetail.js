@@ -35,7 +35,7 @@ export const CustomerDetail = () => {
         <section className="customer card">
             <h3 className="customer__name">{customer.name}</h3>
             <div className="customer__address">Address: {customer.address}</div>
-            <div className="customer__animal">Pet Name: {customer.animal?.name}</div>
+            <div className="customer__animal">Pets Name: {customer.animal?.name}</div>
             <button type="button" disabled={isLoading} onClick={handleDelete}>
                 Delete
             </button>
