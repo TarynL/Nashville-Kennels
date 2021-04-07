@@ -4,22 +4,22 @@
       "id": 1,
       "name": "Doodles",
       "breed": "Poodle",
-      "locationId": 1,
-      "customerId":1
+      "locationId": 2,
+      "customerId": 1
     },
     {
       "id": 2,
       "name": "Oscar",
       "breed": "Boxer",
-      "locationId": 2,
-      "customerId":1
+      "locationId": 1,
+      "customerId": 1
     },
     {
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull",
       "locationId": 3,
-      "customerId":2
+      "customerId": 2
     }
   ],
   "customers": [
