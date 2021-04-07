@@ -12,6 +12,7 @@ import { LocationDetail } from "./location/LocationDetail";
 import { AnimalForm } from './animal/AnimalForm';
 import { LocationForm } from './location/LocationForm';
 import { EmployeeForm } from './employee/EmployeeForm';
+import { CustomerForm } from './customer/CustomerForm';
 
 export const ApplicationViews = () => {
     return (
@@ -65,6 +66,11 @@ export const ApplicationViews = () => {
             <Route path="/customers/:customerId(\d+)">
                 <CustomerDetail />
             </Route>
+
+            <Route path="/customers/create">
+                <CustomerForm />
+            </Route>
+            
         </>
     )
 };
