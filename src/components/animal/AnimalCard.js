@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Animal.css";
 import { Link } from "react-router-dom";
+import {firstLetterCase} from '../../modules/helpers'
 
 
 export const AnimalCard = ({ animal, handleDeleteAnimal }) => {
