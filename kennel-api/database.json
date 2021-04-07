@@ -55,6 +55,12 @@
       "name": "Earl Henry",
       "location": "Nashville South",
       "animalId": 2
+    },
+    {
+      "name": "Haley Louise",
+      "location": "Nashville East",
+      "animalId": 4,
+      "id": 3
     }
   ],
   "locations": [
