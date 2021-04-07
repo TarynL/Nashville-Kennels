@@ -20,6 +20,13 @@
       "breed": "Pitbull",
       "locationId": 3,
       "customerId": 2
+    },
+    {
+      "name": "Buckley",
+      "breed": "Bulldog",
+      "locationId": 3,
+      "customerId": 2,
+      "id": 4
     }
   ],
   "customers": [
@@ -27,7 +34,7 @@
       "id": 1,
       "name": "Nena",
       "address": "99 Luftballoons Blvd",
-      "animalId":2
+      "animalId": 2
     },
     {
       "id": 2,

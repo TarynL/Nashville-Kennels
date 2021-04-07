@@ -26,7 +26,7 @@ export const EmployeeDetail = () => {
         setIsLoading(true);
         deleteEmployee(employeeId)
         .then(() => 
-        history.push("./employees")
+        history.push("/employees")
         );
     };
 
