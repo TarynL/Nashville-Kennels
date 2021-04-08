@@ -13,10 +13,12 @@ import { AnimalForm } from './animal/AnimalForm';
 import { LocationForm } from './location/LocationForm';
 import { EmployeeForm } from './employee/EmployeeForm';
 import { CustomerForm } from './customer/CustomerForm';
-import { Login } from "../components/auth/Login"
-import { Register } from "../components/auth/Register"
-import { AnimalEditForm } from './animal/AnimalEditForm'
-import { CustomerEditForm } from "./customer/CustomerEditForm"
+import { Login } from "../components/auth/Login";
+import { Register } from "../components/auth/Register";
+import { AnimalEditForm } from './animal/AnimalEditForm';
+import { CustomerEditForm } from "./customer/CustomerEditForm";
+import {EmployeeEditForm} from "./employee/EmployeeEditForm";
+
 
 export const ApplicationViews = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem
@@ -75,12 +77,16 @@ export const ApplicationViews = () => {
                 <EmployeeList />
             </Route>
 
-            <Route path="/employees/:employeeId(\d+)">
+            <Route exact path="/employees/:employeeId(\d+)">
                 <EmployeeDetail />
             </Route>
 
             <Route path="/employees/create">
                 <EmployeeForm />
+            </Route>
+
+            <Route path="/employees/:employeeId(\d+)/edit">
+                <EmployeeEditForm />
             </Route>
 
             <Route exact path="/customers">

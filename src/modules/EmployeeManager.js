@@ -12,7 +12,7 @@ export const deleteEmployee = (id) => {
 }
 
 export const getEmployeeById = (id) => {
-  return fetch(`${remoteURL}/employees/${id}?_expand=animal`)
+  return fetch(`${remoteURL}/employees/${id}?_expand=animal&_expand=location`)
     .then(res => res.json())
 }
 
@@ -26,4 +26,13 @@ export const addEmployee = (newEmployee) => {
     body: JSON.stringify(newEmployee)
   }).then (response => response.json())
 
+}
+export const updateEmployee = (editedEmployee) => {
+  return fetch(`${remoteURL}/employees/${editedEmployee.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(editedEmployee)
+  }).then(data => data.json());
 }

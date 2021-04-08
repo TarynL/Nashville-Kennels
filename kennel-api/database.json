@@ -63,20 +63,23 @@
     {
       "id": 1,
       "name": "Gustopher Lewis",
-      "location": "Nashville North",
-      "animalId": 1
+      "email": "gus@lewis.com",
+      "locationId": 1,
+      "animalId": 4
     },
     {
       "id": 2,
       "name": "Earl Henry",
-      "location": "Nashville South",
+      "email": "earl@henry.com",
+      "locationId": 2,
       "animalId": 2
     },
     {
+      "id": 3,
       "name": "Haley Louise",
-      "location": "Nashville East",
-      "animalId": 4,
-      "id": 3
+      "email": "haley@cute.com",
+      "locationId": 3,
+      "animalId": 3
     }
   ],
   "locations": [
