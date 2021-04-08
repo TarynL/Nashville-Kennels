@@ -15,6 +15,7 @@ export const EmployeeDetail = () => {
             .then(employee => {
                 setEmployee({
                     name: employee.name,
+                    email: employee.email,
                     location: employee.location,
                     animal: employee.animal
                 });
@@ -33,7 +34,8 @@ export const EmployeeDetail = () => {
     return (
         <section className="employee card">
             <h3 className="employee__name">{employee.name}</h3>
-            <div className="employee__location">Location: {employee.location}</div>
+            <div className="employee__email">{employee.email}</div>
+            <div className="employee__location">Location: {employee.location?.name}</div>
             <div className="employee__animal">Cared for: {employee.animal?.name}</div>
            <button type="button" disabled={isLoading} onClick={handleDelete}>
                Delete</button> 

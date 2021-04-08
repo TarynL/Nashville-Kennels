@@ -2,16 +2,19 @@ import React, { useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import{addEmployee} from '../../modules/EmployeeManager';
 import{getAllAnimals} from '../../modules/AnimalManager';
+import {getAllLocations} from '../../modules/LocationManager';
 import './EmployeeForm.css';
 
 export const EmployeeForm = () => {
     const [employee, setEmployee] = useState({
         name: "",
-        location: "",
+        email: "",
+        locationId: 0,
         animalId: 0
     });
 
     const [isLoading, setIsLoading] = useState(false);
+    const [locations, setLocations] = useState([]);
     const [animals, setAnimals] = useState([]);
     const history = useHistory();
 
@@ -33,12 +36,21 @@ export const EmployeeForm = () => {
         );
     }, []);
 
+    useEffect (() => {
+        getAllLocations()
+        .then(locationsFromAPI => {
+            setLocations(locationsFromAPI)
+        }
+        );
+    }, []);
+
     const handleClickSaveEmployee = (event) => {
         event.preventDefault()
         const animalId = employee.animalId
+        const locationId = employee.locationId
 
-        if(animalId === 0){
-            window.alert("Please select an animal")
+        if(animalId === 0 || locationId === 0){
+            window.alert("Please select a location and an animal")
         } else {
             addEmployee(employee)
             .then(() => history.push("/employees") )
@@ -57,8 +69,22 @@ export const EmployeeForm = () => {
 
 			<fieldset>
 				<div className="form-group">
+					<label htmlFor="email">Email: </label>
+					<input type="text" id="email" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Email" value={employee.email} />
+				</div>
+			</fieldset>
+
+            <fieldset>
+				<div className="form-group">
 					<label htmlFor="location">Location: </label>
-					<input type="text" id="location" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Location" value={employee.location} />
+					<select value={employee.locationId} name="locationId" id="locationId" onChange={handleControlledInputChange} className="form-control" >
+						<option value="0">Select a location</option>
+						{locations.map(l => (
+							<option key={l.id} value={l.id}>
+								{l.name}
+							</option>
+						))}
+					</select>
 				</div>
 			</fieldset>
 

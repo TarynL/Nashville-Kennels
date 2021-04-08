@@ -41,8 +41,8 @@
       "id": 2,
       "name": "Dolly Parton",
       "address": "925 Jolene Avenue",
-      "animalId": 1,
-      "email": "dolly@dolly.com"
+      "email": "dolly@dolly.com",
+      "animalId": 2
     },
     {
       "name": "Billy Bob",
@@ -52,29 +52,34 @@
       "email": "billy@bob.com"
     },
     {
-      "email": "taryn@taryn.com",
-      "name": "Taryn Lytle",
-      "id": 4
+      "id": 4,
+      "name": "Elton John",
+      "address": "123 Rocketman Road",
+      "email": "tiny@dancer.com",
+      "animalId": 2
     }
   ],
   "employees": [
     {
       "id": 1,
       "name": "Gustopher Lewis",
-      "location": "Nashville North",
-      "animalId": 1
+      "email": "gus@lewis.com",
+      "locationId": 1,
+      "animalId": 4
     },
     {
       "id": 2,
       "name": "Earl Henry",
-      "location": "Nashville South",
+      "email": "earl@henry.com",
+      "locationId": 2,
       "animalId": 2
     },
     {
+      "id": 3,
       "name": "Haley Louise",
-      "location": "Nashville East",
-      "animalId": 4,
-      "id": 3
+      "email": "haley@cute.com",
+      "locationId": 3,
+      "animalId": 3
     }
   ],
   "locations": [
