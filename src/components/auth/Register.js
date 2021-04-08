@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import { useHistory } from "react-router-dom"
 import "./Login.css"
 
-export const Register = (props) => {
+export const Register = ({checkIsAuthenticated}) => {
     const firstName = useRef()
     const lastName = useRef()
     const email = useRef()
@@ -36,6 +36,7 @@ export const Register = (props) => {
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
                                 sessionStorage.setItem("kennel_customer", createdUser.id)
+                                checkIsAuthenticated()
                                 history.push("/")
                             }
                         })
