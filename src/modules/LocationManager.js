@@ -25,3 +25,13 @@ export const addLocation = (newLocation) => {
     body: JSON.stringify(newLocation)
   }).then(response => response.json())
 }
+
+export const updateLocation = (editedLocation) => {
+  return fetch(`${remoteURL}/locations/${editedLocation.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(editedLocation)
+  }).then(data => data.json());
+}

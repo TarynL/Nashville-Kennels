@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom"
 import "./Login.css"
 
 
-export const Login = ({checkIsAuthenticated}) => {
+export const Login = ({setAuthUser}) => {
     const email = useRef()
     const existDialog = useRef()
     const history = useHistory()
@@ -21,8 +21,7 @@ export const Login = ({checkIsAuthenticated}) => {
         existingUserCheck()
             .then(exists => {
                 if (exists) {
-                    sessionStorage.setItem("kennel_customer", exists.id)
-                    checkIsAuthenticated()
+                    setAuthUser(exists)
                     history.push("/")
                 } else {
                     existDialog.current.showModal()

@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import {updateEmployee, getEmployeeById} from "../../modules/EmployeeManager";
+import React, { useState, useEffect } from 'react';
+import { updateEmployee, getEmployeeById } from "../../modules/EmployeeManager";
 import "./EmployeeForm.css";
-import {useHistory, useParams} from 'react-router-dom';
-import {getAllLocations} from '../../modules/LocationManager';
-import {getAllAnimals} from '../../modules/AnimalManager';
+import { useHistory, useParams } from 'react-router-dom';
+import { getAllLocations } from '../../modules/LocationManager';
+import { getAllAnimals } from '../../modules/AnimalManager';
 
 export const EmployeeEditForm = () => {
     const [employee, setEmployee] = useState({});
@@ -16,7 +16,7 @@ export const EmployeeEditForm = () => {
     const [animals, setAnimals] = useState([]);
 
     const handleFieldChange = event => {
-        const stateToChange = {...employee};
+        const stateToChange = { ...employee };
         let selectedVal = event.target.value
         if (event.target.id.includes("Id")) {
             selectedVal = parseInt(selectedVal)
@@ -37,24 +37,26 @@ export const EmployeeEditForm = () => {
             locationId: employee.locationId,
             animalId: employee.animalId
         };
+    
 
-        const locationId = employee.locationId
-        const animalId = employee.animalId
+    const locationId = employee.locationId
+    const animalId = employee.animalId
 
-        if (locationId === 0 || animalId === 0) {
-            window.alert("Please select a location and an animal")
-        } else{
-            updateEmployee(editedEmployee)
+    if (locationId === 0 || animalId === 0) {
+        window.alert("Please select a location and an animal")
+    } else {
+        updateEmployee(editedEmployee)
             .then(() => history.push("/employees"))
-        }
     }
+}
+
 
     useEffect(() => {
         getEmployeeById(employeeId)
-        .then(employee => {
-            setEmployee(employee);
-            setIsLoading(false);
-        });
+            .then(employee => {
+                setEmployee(employee);
+                setIsLoading(false);
+            });
     }, []);
 
     useEffect(() => {
@@ -66,9 +68,9 @@ export const EmployeeEditForm = () => {
 
     useEffect(() => {
         getAllAnimals()
-        .then(animalsFromAPI => {
-            setAnimals(animalsFromAPI)
-        });
+            .then(animalsFromAPI => {
+                setAnimals(animalsFromAPI)
+            });
     }, []);
 
     return (
@@ -94,7 +96,7 @@ export const EmployeeEditForm = () => {
                             id="breed"
                             value={employee.email}
                         />
-                        <label htmlFor="email">email</label>
+                        <label htmlFor="email">Email</label>
 
 
                         <select
@@ -112,19 +114,19 @@ export const EmployeeEditForm = () => {
                         </select>
                         <label htmlFor="location">Location</label>
 
-					<select 
-                    value={employee.animalId} 
-                    name="animal" id="animalId" 
-                    onChange={handleFieldChange} 
-                    className="form-control" >
-						<option value="0">Select an animal</option>
-						{animals.map(a => (
-							<option key={a.id} value={a.id}>
-								{a.name}
-							</option>
-						))}
-					</select>
-                    <label htmlFor="animalId">Animal: </label>
+                        <select
+                            value={employee.animalId}
+                            name="animal" id="animalId"
+                            onChange={handleFieldChange}
+                            className="form-control" >
+                            <option value="0">Select an animal</option>
+                            {animals.map(a => (
+                                <option key={a.id} value={a.id}>
+                                    {a.name}
+                                </option>
+                            ))}
+                        </select>
+                        <label htmlFor="animalId">Animal: </label>
 
                     </div>
                     <div className="alignRight">
@@ -138,4 +140,5 @@ export const EmployeeEditForm = () => {
             </form>
         </>
     );
+
 }

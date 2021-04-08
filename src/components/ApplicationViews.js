@@ -18,15 +18,18 @@ import { Register } from "../components/auth/Register";
 import { AnimalEditForm } from './animal/AnimalEditForm';
 import { CustomerEditForm } from "./customer/CustomerEditForm";
 import {EmployeeEditForm} from "./employee/EmployeeEditForm";
+import {LocationEditForm} from "./location/LocationEditForm";
 
 
 export const ApplicationViews = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem
     ("kennel_customer") !== null)
 
-    const checkIsAuthenticated = () => setIsAuthenticated(sessionStorage.getItem("kennel_customer") !== null)
-
-
+    const setAuthUser = (user) => {
+        sessionStorage.setItem("kennel_customer", JSON.stringify(user))
+        setIsAuthenticated(sessionStorage.getItem("kennel_customer") !== null)
+    }
+    
     return (
         <>
         {console.log("rendered")}
@@ -41,11 +44,11 @@ export const ApplicationViews = () => {
             </Route>
 
             <Route path="/login">
-                <Login checkIsAuthenticated={checkIsAuthenticated} />
+            <Login setAuthUser={setAuthUser}/>
             </Route>
 
             <Route path="/register">
-                <Register checkIsAuthenticated={checkIsAuthenticated} />
+            <Register setAuthUser={setAuthUser}/>
             </Route>
 
 
@@ -65,12 +68,16 @@ export const ApplicationViews = () => {
                 <LocationList />
             </Route>
 
-            <Route path="/locations/:locationId(\d+)">
+            <Route exact path="/locations/:locationId(\d+)">
                 <LocationDetail />
             </Route>
 
             <Route path="/locations/create">
                 <LocationForm />
+            </Route>
+
+            <Route path="/locations/:locationId(\d+)/edit">
+                <LocationEditForm />
             </Route>
 
             <Route exact path="/employees">
@@ -108,5 +115,5 @@ export const ApplicationViews = () => {
            
         </>
     )
-};
+}
 
