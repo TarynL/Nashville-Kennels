@@ -8,6 +8,7 @@ export const CustomerForm = () => {
     const [customer, setCustomer] = useState({
         name: "",
         address: "",
+        email: "",
         animalId: 0
     });
 
@@ -59,6 +60,13 @@ export const CustomerForm = () => {
 				<div className="form-group">
 					<label htmlFor="address">Address: </label>
 					<input type="text" id="address" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Address" value={customer.address} />
+				</div>
+			</fieldset>
+
+            <fieldset>
+				<div className="form-group">
+					<label htmlFor="email">Email: </label>
+					<input type="text" id="email" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Email" value={customer.email} />
 				</div>
 			</fieldset>
 

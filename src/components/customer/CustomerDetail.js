@@ -18,7 +18,8 @@ export const CustomerDetail = () => {
                 setCustomer({
                     name: customer.name,
                     address: customer.address,
-                    animal: customer.animal
+                    animal: customer.animal,
+                    email: customer.email
                 });
                 setIsLoading(false);
             });
@@ -35,6 +36,7 @@ export const CustomerDetail = () => {
         <section className="customer card">
             <h3 className="customer__name">{customer.name}</h3>
             <div className="customer__address">Address: {customer.address}</div>
+            <div className="customer__email">Email: {customer.email}</div>
             <div className="customer__animal">Pets Name: {customer.animal?.name}</div>
             <button type="button" disabled={isLoading} onClick={handleDelete}>
                 Delete
