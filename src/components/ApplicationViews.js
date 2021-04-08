@@ -16,6 +16,7 @@ import { CustomerForm } from './customer/CustomerForm';
 import { Login } from "../components/auth/Login"
 import { Register } from "../components/auth/Register"
 import { AnimalEditForm } from './animal/AnimalEditForm'
+import { CustomerEditForm } from "./customer/CustomerEditForm"
 
 export const ApplicationViews = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem
@@ -86,12 +87,16 @@ export const ApplicationViews = () => {
                 <CustomerList />
             </Route>
 
-            <Route path="/customers/:customerId(\d+)">
+            <Route exact path="/customers/:customerId(\d+)">
                 <CustomerDetail />
             </Route>
 
             <Route path="/customers/create">
                 <CustomerForm />
+            </Route>
+
+            <Route path="/customers/:customerId(\d+)/edit">
+                <CustomerEditForm />
             </Route>
 
            
