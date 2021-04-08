@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Route, Redirect } from "react-router-dom";
 import { Home } from "./Home";
 import { AnimalList } from "./animal/AnimalList";
@@ -18,10 +18,15 @@ import { Register } from "../components/auth/Register"
 import { AnimalEditForm } from './animal/AnimalEditForm'
 
 export const ApplicationViews = () => {
+    const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem
+    ("kennel_customer") !== null)
+
+    const checkIsAuthenticated = () => setIsAuthenticated(sessionStorage.getItem("kennel_customer") !== null)
 
 
     return (
         <>
+        {console.log("rendered")}
             {/* Render the location list when http://localhost:3000/ */}
             <Route exact path="/">
                 <Home />
@@ -29,8 +34,17 @@ export const ApplicationViews = () => {
 
             {/* Render the animal list when http://localhost:3000/animals */}
             <Route exact path="/animals">
-                {sessionStorage.getItem("kennel_customer") !== null ? <AnimalList /> : <Redirect to="/login" />}
+                {isAuthenticated ? <AnimalList /> : <Redirect to="/login" />}
             </Route>
+
+            <Route path="/login">
+                <Login checkIsAuthenticated={checkIsAuthenticated} />
+            </Route>
+
+            <Route path="/register">
+                <Register checkIsAuthenticated={checkIsAuthenticated} />
+            </Route>
+
 
             <Route exact path="/animals/:animalId(\d+)">
                 <AnimalDetail />
@@ -80,14 +94,7 @@ export const ApplicationViews = () => {
                 <CustomerForm />
             </Route>
 
-            <Route path="/login">
-                <Login />
-            </Route>
-
-            <Route path="/register">
-                <Register />
-            </Route>
-
+           
         </>
     )
 };
